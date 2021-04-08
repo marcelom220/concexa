@@ -1,0 +1,9 @@
+-------Para rodar a aplicação seguir o passo a passo
+0- Modifique as configurações de banco de dados nos arquivos application-cr.properties e application-dev.properties
+1-Modifique o aquivo application.properties  colocando o parametro dessa forma spring.profiles.active=cr, oauth-security
+2-inicie a aplicação springBoot
+3-pare a aplicação
+4-Modifique novamente o aquivo application.properties  colocando o parametro dessa forma spring.profiles.active=dev, oauth-security
+5- Inicie a aplicação novamente e realize os teste por Postman(Arquivo incluso no git)
+
+Obs:ca so queira rodar os testes unitários usar o aquivo application.properties  colocando o parametro dessa forma spring.profiles.active=teste
