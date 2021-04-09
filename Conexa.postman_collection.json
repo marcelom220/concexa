@@ -1,0 +1,320 @@
+{
+	"info": {
+		"_postman_id": "d9138ac9-7ff6-40c1-bf3f-1c482cccb5f9",
+		"name": "Conexa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Criar token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "conexa",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "conexa",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": " Basic $2a$10$sQ8Bho.BzbDPRZ5rDa32S.nNStDKOLHd0pAaiDspScROxvyF0790a",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "joao@email.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "senha",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client",
+							"value": "conexa",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/oauth/token",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Renovar token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "conexa",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "conexa",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "refresh_token",
+							"type": "text"
+						},
+						{
+							"key": "refresh_token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlc3BlY2lhbGlkYWRlIjoiSm_Do28gU2lsdmEiLCJ1c2VyX25hbWUiOiJqb2FvQGVtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJtZWRpY28iOiJKb8OjbyBTaWx2YSIsImF0aSI6IjY5YjFjYzQ0LTEwMWEtNDA4Yy1hOGU2LTY5MTJkOTAxNmI0ZCIsImV4cCI6MTYxNzkzMTU4MiwiYWdlbmRhbWVudG9zX2hvamUiOm51bGwsImF1dGhvcml0aWVzIjpbIlJPTEVfUEVTUVVJU0FSX0FHRU5EQU1FTlRPIiwiUk9MRV9DQURBU1RSQVJfQUdFTkRBTUVOVE8iXSwianRpIjoiODI0NzRhN2QtZTU1OS00YzM2LWE4MTEtMDk5MWUyNWJkZmJhIiwiY2xpZW50X2lkIjoiY29uZXhhIn0.oH1y2X4JRwY73y7EmGSyv3krC2HDq_e6JPAjdsQaJkw",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/oauth/token",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fazer logoff",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlc3BlY2lhbGlkYWRlIjoiSm_Do28gU2lsdmEiLCJ1c2VyX25hbWUiOiJqb2FvQGVtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJtZWRpY28iOiJKb8OjbyBTaWx2YSIsImV4cCI6MTYxNzg0ODY0NywiYWdlbmRhbWVudG9zX2hvamUiOm51bGwsImF1dGhvcml0aWVzIjpbIlJPTEVfUEVTUVVJU0FSX0FHRU5EQU1FTlRPIiwiUk9MRV9DQURBU1RSQVJfQUdFTkRBTUVOVE8iXSwianRpIjoiNzY3ZmJlM2QtMDYyMC00ZGJkLTgyMmYtMmE4OGEwMjc1YzM5IiwiY2xpZW50X2lkIjoiY29uZXhhIn0.XU5yFVbvHFIPQRxhAieCAvj70mj5zmenXRiJ5gwlC0s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/token/revoke",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"token",
+						"revoke"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscarPacientePorId",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/pacientes/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pacientes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remover paciente Por Id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/pacientes/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pacientes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Paciente",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Rafael Braga\",\r\n  \"cpf\": \"101.202.303-11\",\r\n  \"idade\": \"33\",\r\n  \"telefone\": \"(21) 3232-6565\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/pacientes",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pacientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar Paciente",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "conexa",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "conexa",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idPaciente\": 2,\r\n  \"nome\": \"João Braga\",\r\n  \"cpf\": \"101.202.303-11\",\r\n  \"idade\": \"34\",\r\n  \"telefone\": \"(21) 3232-6565\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/pacientes/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pacientes",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Agendamento",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlc3BlY2lhbGlkYWRlIjoiSm_Do28gU2lsdmEiLCJ1c2VyX25hbWUiOiJqb2FvQGVtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJtZWRpY28iOiJKb8OjbyBTaWx2YSIsImV4cCI6MTYxNzkwMjk3MCwiYWdlbmRhbWVudG9zX2hvamUiOm51bGwsImF1dGhvcml0aWVzIjpbIlJPTEVfUEVTUVVJU0FSX0FHRU5EQU1FTlRPIiwiUk9MRV9DQURBU1RSQVJfQUdFTkRBTUVOVE8iXSwianRpIjoiNjVmODFhYWMtMmIyYy00NWE2LWIzMWQtMGU0NzAyMTI1NWMyIiwiY2xpZW50X2lkIjoiY29uZXhhIn0.6wU2GmwzXlXcR1fpL3VZNhqDAA1kXtm8RyJtX0_dDJs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n  \"dataHoraAtendimento\": \"2021-04-08T09:00:00\",\r\n  \"paciente\": {\r\n      \"idPaciente\":2\r\n  },\r\n  \"medico\": {\r\n      \"codigo\":2\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/agendamentos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"agendamentos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
